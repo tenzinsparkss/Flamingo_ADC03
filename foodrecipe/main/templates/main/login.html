@@ -1,0 +1,17 @@
+  
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+  <form method="POST">
+
+      {% csrf_token %}
+      {{form.as_p}}
+      <button style="color: blue" type="submit">Login</button>
+
+  
+  </form>
+</div>
+
+
+{% endblock %}
