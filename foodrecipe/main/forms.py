@@ -4,6 +4,7 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
 
 class RegistrationForm(forms.ModelForm):
+<<<<<<< Updated upstream
 
     email = forms.CharField(label='Email Address', widget=forms.TextInput(
 
@@ -33,6 +34,10 @@ class RegistrationForm(forms.ModelForm):
             'placeholder': 'Re-enter your password...'
         }
     ))
+=======
+    password1 = forms.CharField(widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Confirm password',widget=forms.PasswordInput)
+>>>>>>> Stashed changes
 
     class Meta:
         model = User
