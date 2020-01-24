@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>UserName</th>
+                <th>Download</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        {% if recipes %}
+        <tbody>
+            {% for b in recipes %}
+            <tr>
+                <td>{{b.title}}</td>
+                <td>{{b.username}}</td>
+                <td><a href="{{b.pdf.url}}" class="btn btn-primary btn-sm">Download PDF</a></td>
+                <td>
+                    <form action="{% url 'crudrecipe:delete_recipe' b.pk %}" method="POST">
+                        {% csrf_token %}
+                        <button class="btn btn-primary" type="submit">Delete PDF</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        {% else %}
+
+            
+        </tbody>
+        {% endif %}
+    </table>
+</div>
+{% endblock %}
