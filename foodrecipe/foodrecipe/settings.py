@@ -32,16 +32,22 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'main',
-    
+    'crispy_forms',
+    'feedback',
+    'restapi',
+    'recipe_download',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'user_profile',
+    
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 AUTH_USER_MODEL ='main.User'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -65,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -119,5 +126,22 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+# STATIC_URL = '/images/'
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+# MEDIA_URL = "/recipes/pdfs/"
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/recipes/'
+MEDIA_URL = '/recipe_videos/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'main/static'),
+    
+)
+
