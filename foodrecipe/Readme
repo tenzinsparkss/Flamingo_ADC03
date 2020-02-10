@@ -1,0 +1,13 @@
+# Food Recipe Web application prepared by Flamingo Team Members i.e. Karma Dolma Gurung, Phurba Yangji Sherpa and Tenzin Lama.
+
+# We have four basic features of our website which are main, feedback, recipe_download and restapi.
+
+# Before creating through registration, we have admin login i.e. "tenzinsparks@gmail.com" for email and password is "honeycoder".
+
+# For normal user, you can just sign up through registration form.
+
+# Regarding our food recipe website, we have implmented CRUD operations as well as upload and download functions too.
+
+# We have used login required of decorator class that helps to login our user mandatory for certain requirments.
+
+#Search Functionalities used in RECIPE_LIST.html only.
